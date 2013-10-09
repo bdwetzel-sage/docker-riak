@@ -17,6 +17,7 @@ fi
 for index in `seq 5`;
 do
   CONTAINER_ID=$(sudo docker run -d -i \
+    -p 8098 \
     -h "riak${index}" \
     -e "RIAK_NODE_NAME=33.33.33.${index}0" \
     -t "hectcastro/riak")
